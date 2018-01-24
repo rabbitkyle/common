@@ -17,3 +17,14 @@ function deepCopy(source) {
     }
     return result;
 }
+
+/**
+ * rgb值转hex
+ * @param   {Number} r 颜色值
+ * @param   {Number} g 颜色值
+ * @param   {Number} b 颜色值
+ * @constructor
+ */
+function RGBToHex(r, g, b) {
+  return ((r << 16) + (g << 8) + b).toString(16).padStart(6, '0');
+};
