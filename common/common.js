@@ -288,3 +288,20 @@ function differenceBy(a, b, fn) {
 }
 
 // differenceBy([2.1, 1.2], [2.3, 3.4], Math.floor); // [1.2]
+
+/**
+ * [escapeHTML description]
+ * @param  {[type]} str [description]
+ * @return {[type]}     [description]
+ */
+function escapeHTML(str) {
+  return str.replace(/[&<>'"]/g, function (tag) {
+    return {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      "'": '&#39;',
+      '"': '&quot;'
+    }[tag] || tag;
+  });
+};
