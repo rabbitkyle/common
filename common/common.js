@@ -28,6 +28,22 @@ function deepCopy(source) {
 function RGBToHex(r, g, b) {
     return ((r << 16) + (g << 8) + b).toString(16).padStart(6, '0');
 };
+// padStart 兼容
+if (!String.prototype.padStart) {
+    String.prototype.padStart = function padStart(targetLength,padString) {
+        targetLength = targetLength >> 0;
+        padString = String((typeof padString !== 'undefined' ? padString : ' '));
+        if (this.length > targetLength) {
+            return String(this);
+        } else {
+            targetLength = targetLength-this.length;
+            if (targetLength > padString.length) {
+                padString += padString.repeat(targetLength/padString.length); //append to original to ensure we are longer than needed
+            }
+            return padString.slice(0,targetLength) + String(this);
+        }
+    };
+}
 
 /**
  * [anagrams description]
