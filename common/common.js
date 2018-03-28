@@ -46,6 +46,15 @@ if (!String.prototype.padStart) {
 }
 
 /**
+*
+* @param hex 例如:"#23ff45"
+* @returns {string}
+*/
+function hexToRgb(hex) {
+    return "rgb(" + parseInt("0x" + hex.slice(1, 3)) + "," + parseInt("0x" + hex.slice(3, 5)) + "," + parseInt("0x" + hex.slice(5, 7)) +  ")";
+}
+
+/**
  * [anagrams description]
  * @param  {[type]} str [description]
  * @return {[type]}     [description]
