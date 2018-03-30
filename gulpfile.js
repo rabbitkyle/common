@@ -11,9 +11,10 @@ var rename = require('gulp-rename');
 
 
 
-gulp.task('react', () => {
+gulp.task('compile', () => {
   return browserify({
-    entries: './index.js',
+    entries: './src/core/color/ColorGradient.js',
+    standalone: 'cn.szse.core.ColorGradient',
     debug: true,
   })
   .transform('babelify')
@@ -23,9 +24,9 @@ gulp.task('react', () => {
   .pipe(sourcemaps.init({
     loadMaps: true
   }))
-  .pipe(gulp.dest('./dist/bundle'))
+  .pipe(gulp.dest('./dist/color'))
   .pipe(uglify())
   .pipe(rename('bundle.min.js'))
   .pipe(sourcemaps.write('./'))
-  .pipe(gulp.dest('./dist/bundle'));
+  .pipe(gulp.dest('./dist/color'));
 });
