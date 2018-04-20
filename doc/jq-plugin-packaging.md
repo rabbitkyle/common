@@ -11,7 +11,21 @@
 		};
 	}();
 
-	$.fn.[plugin-name] = [Func];
+	function draw() {
+		// do something
+
+		return {
+			// some function
+			action: function() {
+
+			},
+			action2: function() {
+
+			}
+		}
+	}
+
+	$.fn.draw = draw;
 
 })(window.jQuery);
 ```
