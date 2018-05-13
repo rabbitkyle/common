@@ -1,6 +1,8 @@
 # workspace :  storage daily code
+### content
+* [`ColorGradient 获取颜色渐变色`](#ColorGradient 获取颜色渐变色)
 
-# ColorGradient 获取颜色渐变色
+### ColorGradient 获取颜色渐变色
 ```js
 	var options = {
 		values: [-1, 0, 2],
