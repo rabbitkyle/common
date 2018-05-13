@@ -1,6 +1,6 @@
-#实现简单的数据双向绑定
+# 实现简单的数据双向绑定
 
-##实现原理--Object.defineProperty()
+## 实现原理--Object.defineProperty()
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -33,7 +33,7 @@
 </html>
 ```
 
-#对象与原始类型进行比较
+# 对象与原始类型进行比较
 ```js
 var a = {
 	value: 2,
@@ -48,10 +48,10 @@ if (a == 3 && a == 4) {
 
 // 233
 ```
--- 对象与原始类型进行比较，会先将对象转换为原始类型，对象转换类型就是依据valueOf 和toStrig的返回值。
+--对象与原始类型进行比较，会先将对象转换为原始类型，对象转换类型就是依据valueOf 和toStrig的返回值。
 先调用valueOf返回它本身，不是原始类型，因此在调用toString，第一次判断 a == 3， toString执行 返回++2，就是3， 第二次 为4， 故进入if语句
 
-#深度优先遍历与广度优先遍历
+# 深度优先遍历与广度优先遍历
 ```js
 // 深度优先
 function depthFistSearch(node) {
