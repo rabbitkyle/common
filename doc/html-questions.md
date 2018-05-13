@@ -1,10 +1,10 @@
-#html相关问题
+# html相关问题
 
-1.DOCTYPE作用？
+## 1.DOCTYPE作用？
 
 html中区分标准模式和怪异模式的声明
 
-2.Cookie loacalStorage  sessionStorage区别？
+## 2.Cookie loacalStorage  sessionStorage区别？
 
 上面提到的技术名词，都是在客户端以键值对存储的存储机制，并且只能将值存储为字符串。
 
