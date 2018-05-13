@@ -2,6 +2,46 @@
 ### content
 * [`ColorGradient获取颜色渐变色`](#ColorGradient获取颜色渐变色)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### ColorGradient获取颜色渐变色
 ```js
 	var options = {
