@@ -6,7 +6,7 @@
 
 ### 实现简单的数据双向绑定
 
-## 实现原理--Object.defineProperty()
+#### 实现原理--Object.defineProperty()
 ```html
 <!DOCTYPE html>
 <html lang="en">
