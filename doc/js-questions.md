@@ -3,6 +3,7 @@
 * [`实现简单的数据双向绑定`](#实现简单的数据双向绑定)
 * [`对象与原始类型进行比较`](#对象与原始类型进行比较)
 * [`深度优先遍历与广度优先遍历`](#深度优先遍历与广度优先遍历)
+* [`类数组转换为数组`](#类数组转换为数组)
 
 ### 实现简单的数据双向绑定
 
@@ -159,4 +160,17 @@ depthFistSearch(treeData);
 breadthFistSearch(treeData);
 
 console.log(treeData)
+```
+
+### 类数组转换为数组
+
+* Array.from();
+* Array.prototype.slice.call();
+
+```js
+const nodeList = $("div.items");
+Array.from(nodeList).map(d => condole.log(d));
+Array.prototype.slice.call(nodeList).forEach(function(d) {
+    console.log(d);
+});
 ```
