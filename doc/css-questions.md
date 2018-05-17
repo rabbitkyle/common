@@ -105,7 +105,7 @@
 ## *justify-content*
 ```css
 .flex-container {
-	justify-content: flex-start; /* flex-end, center, space-evenly(间隙均分), space-round(dobule size), space-between(左右与相邻边距不一定相等) */
+	justify-content: flex-start; /* flex-end, center, space-evenly(间隙均分), space-round(dobule size), space-between(左右靠边，中间间距相等) */
 }
 ```
 
