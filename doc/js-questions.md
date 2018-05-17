@@ -174,3 +174,33 @@ Array.prototype.slice.call(nodeList).forEach(function(d) {
     console.log(d);
 });
 ```
+
+### 获取节点方式比较
+
+    querySelectorAll , getElementByClassName , jq $("div")
+
+querySelectorAll, jq $("div")为静态节点， getElementByClassName为动态节点， 删除节点后，静态节点不变， 动态节点会改变；
+* html
+
+```html
+    <div class="items">1</div>
+    <div class="items">2</div>
+    <div class="items">3</div>
+    <div class="items">4</div>
+    <div id="target" class="items">5</div>
+```
+* js
+
+```js
+var nodeList = document.querySelectorAll('div.items');
+var domList = document.getElementByClassName("items");
+var jqDomList = $(".items");
+
+setTimeout(function() {
+    $("#target").remove();
+    console.log(nodeList);
+    console.log(domList);  // 为删除节点后的集合
+    console.log(jqDomList);
+}, 2000)
+```
+
