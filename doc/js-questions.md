@@ -6,7 +6,7 @@
 * [`类数组转换为数组`](#类数组转换为数组)
 * [`获取节点方式比较`](#获取节点方式比较)
 * [`Function.prototype.bind`](#bind方法)
-* [`hashKey`](#获取唯一ID)
+* [`hashKey`](#获取唯一key值)
 
 ### 实现简单的数据双向绑定
 
@@ -231,7 +231,7 @@ var fn = sayHi.bind(obj);
 fn();    // 8
 
 ```
-### 获取唯一ID
+### 获取唯一key值
 ```js
 function hash(key) {
     let hashValue = 0;
