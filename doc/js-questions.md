@@ -6,6 +6,7 @@
 * [`类数组转换为数组`](#类数组转换为数组)
 * [`获取节点方式比较`](#获取节点方式比较)
 * [`Function.prototype.bind`](#bind方法)
+* [`hashKey`](#获取唯一ID)
 
 ### 实现简单的数据双向绑定
 
@@ -228,5 +229,20 @@ sayHi();    // 5
 var fn = sayHi.bind(obj);
 
 fn();    // 8
+
+```
+### 获取唯一ID
+```js
+function hash(key) {
+    let hashValue = 0;
+    const stringTypeKey = `${key}${typeof key}`;
+    for (let index = 0; index < stringTypeKey.length; index++) {
+      const charCode = stringTypeKey.charCodeAt(index);
+      hashValue += charCode << (index * 8);
+    }
+    return hashValue;
+}
+
+hash('1');
 
 ```
