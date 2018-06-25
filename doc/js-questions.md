@@ -5,7 +5,7 @@
 * [`深度优先遍历与广度优先遍历`](#深度优先遍历与广度优先遍历)
 * [`类数组转换为数组`](#类数组转换为数组)
 * [`获取节点方式比较`](#获取节点方式比较)
-* [`Function.prototype.bind`](#Function.prototype.bind)
+* [`Function.prototype.bind`](#bind方法)
 
 ### 实现简单的数据双向绑定
 
@@ -205,7 +205,7 @@ setTimeout(function() {
     console.log(jqDomList);
 }, 2000)
 ```
-### Function.prototype.bind
+### bind方法
 ```js
 Function.prototype.bind = function(context) {
     var self = this;
