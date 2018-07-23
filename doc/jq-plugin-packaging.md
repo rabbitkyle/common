@@ -29,3 +29,34 @@
 
 })(window.jQuery);
 ```
+
+# jq 链式操作
+
+```js
+function Animal() {
+
+	function eat() {
+		console.log("eat");
+		return api;
+	}
+
+	function sleep() {
+		console.log("sleep");
+		return api;
+	}
+
+	function play() {
+		console.log("play");
+		return api;
+	}
+
+	var api = {
+		eat: eat,
+		sleep: sleep,
+		play: play
+	};
+
+	return api;
+	
+}
+```
