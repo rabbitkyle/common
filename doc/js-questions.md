@@ -7,6 +7,7 @@
 * [`获取节点方式比较`](#获取节点方式比较)
 * [`Function.prototype.bind`](#bind方法)
 * [`hashKey`](#获取唯一key值)
+* [`实现继承的几种方法`](#实现继承)
 
 ### 实现简单的数据双向绑定
 
@@ -246,3 +247,89 @@ function hash(key) {
 hash('1');
 
 ```
+
+### 实现继承
+
+
+1. 构造函数的继承---构造函数绑定
+
+```js
+function Animal() {
+    this.type = "动物";
+}
+
+function Cat(name, color) {
+    Animal.apply(this, arguments);
+    this.name = name;
+    this.color = color;
+}
+
+var cat1 = new Cat("大毛","黄色");
+
+alert(cat1.type); // 动物
+```
+
+2. 构造函数的继承---prototype模式
+
+```js
+function extend(Child, Parent) {
+    var F = function() {};
+    F.prototype = Parent.prototype;
+    Child.prototype = new F();
+    Child.prototype.constructor = Child;
+}
+
+extend(Cat, Animal);
+```
+
+3. 非构造函数的继承---拷贝继承
+
+```js
+    // 非构造函数的继承
+    var Chinese = {
+　　　　nation:'中国'
+　　};
+
+    var Doctor ={
+　　　　career:'医生'
+　　}
+
+　　function object(o) {
+
+　　　　function F() {}
+
+　　　　F.prototype = o;
+
+　　　　return new F();
+
+　　}
+
+    var Doctor = object(Chinese);
+    alert(Doctor.nation); //中国
+
+
+    // 深拷贝继承
+    function deepCopy(p, c) {
+
+　　　　var c = c || {};
+
+　　　　for (var i in p) {
+
+　　　　　　if (typeof p[i] === 'object') {
+
+　　　　　　　　c[i] = (p[i].constructor === Array) ? [] : {};
+
+　　　　　　　　deepCopy(p[i], c[i]);
+
+　　　　　　} else {
+
+　　　　　　　　　c[i] = p[i];
+
+　　　　　　}
+　　　　}
+
+　　　　return c;
+　　}
+
+```
+
