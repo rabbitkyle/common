@@ -40,3 +40,26 @@ private watchValue(newVal:any, oldVal:any) {
   <el-form-item label="登记信息:"></el-form-item>
  </el-form>
 ```
+
+## scrollBehavior router滑动行为可以完全的被定制化处理 - 甚至为每次路由进行定制也可以满足
+```ts
+export default new Router({
+  // mode: 'history',
+  scrollBehavior: function (to, from, savedPosition) {
+    return savedPosition || { x: 0, y: 0 }
+  },
+  base: process.env.BASE_URL,
+  routes: [
+    {
+      path: '/login',
+      name: 'login',
+      component: Login,
+    },
+    {
+      path: '/test',
+      name: 'test',
+      component: () => import('@/views/test.vue'),
+    },
+  ],
+});
+```
