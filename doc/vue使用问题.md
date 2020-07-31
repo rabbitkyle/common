@@ -29,3 +29,14 @@ private watchValue(newVal:any, oldVal:any) {
     this.$emit('input', this.formatValue(true));
 }
 ```
+
+## element-ui当form里面只有一个el-form-item时里面嵌套的el-input点击回车会默认触发提交
+```html
+<!-- 方案1 -->
+<el-form :inline="true" @submit.native.prevent>
+<!-- 方案2  -->
+ <el-form>
+  <el-form-item label="登记信息:"></el-form-item>
+  <el-form-item label="登记信息:"></el-form-item>
+ </el-form>
+```
