@@ -63,3 +63,13 @@ export default new Router({
   ],
 });
 ```
+
+## 递归组件生产环境不渲染问题（多级菜单组件）
+name属性一定要写
+```ts
+@Component({
+  name: 'SideBarItem'
+})
+export default class SideBarItem extends Vue {
+}
+```
