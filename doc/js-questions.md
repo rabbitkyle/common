@@ -336,18 +336,39 @@ extend(Cat, Animal);
 ```
 
 ### 函数防抖动
+
 ```js
+// 触发高频事件后n秒内函数只会执行一次，如果n秒内高频事件再次被触发，则重新计算时间。
 // func是用户传入需要防抖的函数
 // wait是等待时间
 const debounce = (func, wait = 50) => {
-  
+  	let timeout = null;
+	return function (e) {
+		// 每当用户输入的时候把前一个 setTimeout clear 掉
+		clearTimeout(timeout); 
+		// 然后又创建一个新的 setTimeout, 这样就能保证interval 间隔内如果时间持续触发，就不会执行 fn 函数
+		timeout = setTimeout(() => {
+			func.apply(this, arguments);
+		}, wait);
+	};
 }
 ```
 
 ### 函数节流
 ```js
-function throttle(method,delay){
-    
+// 高频事件触发，但在n秒内只会执行一次，所以节流会稀释函数的执行频率。
+function throttle(func, delay){
+    let flag = true;
+	return function (e) {
+		if (!flag) {
+			return
+		}
+		flag = false;
+		setTimeout(() => {
+			func.apply(this, arguments);
+			flag = true;
+		}, delay);
+	};
 }
 ```
 
